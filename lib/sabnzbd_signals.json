@@ -1,0 +1,19 @@
+{
+  "Downloading" : "active",
+  "Grabbing" : "active",
+  "Fetching" : "active",
+  "Queued" : "active",
+  "QuickCheck" : "active",
+  "Checking" : "active",
+  "Repairing" : "active",
+  "Verifying" : "active",
+  "Extracting" : "active",
+  "Moving" : "active",
+  "Running" : "active",
+  "Propagating" : "active",
+  "Idle" : "idle",
+  "Completed" : "idle",
+  "Failed" : "idle",
+  "Paused" : "idle",
+  "Deleted" : "idle"
+}
