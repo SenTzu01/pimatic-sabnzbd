@@ -37,7 +37,6 @@ module.exports = (env) ->
     retrieveStatus: () =>
       status = "idle"
       @_sabnzbd = new SABnzbd("http://#{@config.address}:#{@config.port}/", @config.key)
-      return @_base.rejectWithErrorString(Promise.reject(), error, "Unable to connect to SABNZBd at http://#{@config.address}:#{@config.port}/") if !@_sabnzbd?
       @_sabnzbd.entries().then( (entries) =>
         @_setPresence(true)
         entries.map( (item) =>
@@ -50,7 +49,6 @@ module.exports = (env) ->
       ).catch( (error) =>
         @_setPresence(false)
         status = "unknown"
-        @_base.rejectWithErrorString(Promise.reject(), error, "Unable to retrieve status from SABNZBd API at http://#{@config.address}:#{@config.port}/")
       
       ).finally( () =>
         @_setStatus(status)
